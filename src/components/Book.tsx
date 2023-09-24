@@ -4,15 +4,14 @@ export default function Book() {
   return (
     <>
       {bookdata.library.map((book) => (
-        <div key={book.book.ISBN}>
+        <div key={book.book.ISBN} className="md:col-span-2">
           <img
             src={book.book.cover}
             alt={book.book.title}
-            className="object-cover  inset-0 w-full h-full"
+            className=" w-full h-full"
           />
         </div>
       ))}
-      ;
     </>
   );
 }

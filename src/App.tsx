@@ -9,7 +9,7 @@ function App() {
           <NavBar />
         </header>
         <main>
-          <section className="grid grid-cols-4 gap-4">
+          <section className="grid grid-cols-4 ">
             <Book />
           </section>
         </main>
