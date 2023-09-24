@@ -4,12 +4,14 @@ import Book from "./components/Book";
 function App() {
   return (
     <>
-      <div className="min-w-max h-screen">
+      <div className="min-w-screen h-screen">
         <header className="">
           <NavBar />
         </header>
         <main>
-          <Book />
+          <section className="grid grid-cols-4 gap-4">
+            <Book />
+          </section>
         </main>
       </div>
     </>

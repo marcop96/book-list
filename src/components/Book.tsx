@@ -1,9 +1,18 @@
 import bookdata from "../data/bookdata.json";
 
 export default function Book() {
-  console.log(bookdata.library[0].book.ISBN);
-
-  return bookdata.library.map((book) => {
-    return <img key={book.book.ISBN} src={book.book.cover} />;
-  });
+  return (
+    <>
+      {bookdata.library.map((book) => (
+        <div key={book.book.ISBN}>
+          <img
+            src={book.book.cover}
+            alt={book.book.title}
+            className="object-cover  inset-0 w-full h-full"
+          />
+        </div>
+      ))}
+      ;
+    </>
+  );
 }
