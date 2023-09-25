@@ -36,7 +36,9 @@ function App() {
   });
 
   const [selectedBook, setSelectedBook] = useState("");
+
   const selectedBookHandler = (book: book) => {
+    console.log(book);
     setSelectedBook(book);
   };
 
@@ -48,12 +50,14 @@ function App() {
         </header>
         <main className="flex">
           <section className="grid grid-cols-4 w-1/2  gap-4  ml-2 ">
-            {bookList.map((bookList) => {
+            {bookList.map((book) => {
               return (
                 <BookCovers
-                  cover={bookList.cover}
-                  alt={bookList.title}
-                  key={bookList.ISBN}
+                  cover={book.cover}
+                  alt={book.title}
+                  key={book.ISBN}
+                  info={book}
+                  onClick={selectedBookHandler}
                 />
               );
             })}
