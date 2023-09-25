@@ -38,7 +38,6 @@ function App() {
   const [selectedBook, setSelectedBook] = useState("");
 
   const selectedBookHandler = (book: book) => {
-    console.log(book);
     setSelectedBook(book);
   };
 
