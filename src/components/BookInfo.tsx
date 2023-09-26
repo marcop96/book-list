@@ -4,7 +4,7 @@ type Props = {
 };
 
 export default function BookInfo({ book }: Props) {
-  console.log(book);
+  console.log(book?.author.otherBooks);
 
   return book == undefined ? (
     "Select a book"
@@ -18,7 +18,8 @@ export default function BookInfo({ book }: Props) {
         <p>Pages: {book.pages}</p>
         <p>Genre: {book.genre}</p>
         <p>
-          Other books from {book.author.name}: {book.author.otherBooks}
+          Other books from {book.author.name}:{" "}
+          {book.author.otherBooks.join(", ")}
         </p>
       </span>
     </div>
