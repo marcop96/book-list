@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 import BookCovers from "./components/BookCovers";
 import BookInfo from "./components/BookInfo";
 import { useState } from "react";
-import { Book, Author } from "./types";
+import { Book } from "./types";
 
 import books from "../src/data/bookdata.json";
 
@@ -35,7 +35,7 @@ function App() {
     };
   });
 
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [selectedBook, setSelectedBook] = useState<Book | undefined>(undefined);
 
   const selectedBookHandler = (book: Book) => {
     setSelectedBook(book);

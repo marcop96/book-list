@@ -1,6 +1,6 @@
 import { Book } from "../types";
 type Props = {
-  book: Book;
+  book: Book | undefined;
 };
 
 export default function BookInfo({ book }: Props) {
