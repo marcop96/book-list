@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 import BookCovers from "./components/BookCovers";
 import BookInfo from "./components/BookInfo";
 import { useState } from "react";
-import { book } from "./types";
+import { Book, Author } from "./types";
 
 import books from "../src/data/bookdata.json";
 
@@ -35,9 +35,9 @@ function App() {
     };
   });
 
-  const [selectedBook, setSelectedBook] = useState("");
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
-  const selectedBookHandler = (book: book) => {
+  const selectedBookHandler = (book: Book) => {
     setSelectedBook(book);
   };
 
@@ -61,7 +61,7 @@ function App() {
               );
             })}
           </section>
-          <section className="ml-3">
+          <section className="ml-3 w-1/2">
             <BookInfo book={selectedBook} />
           </section>
         </main>

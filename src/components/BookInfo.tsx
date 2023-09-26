@@ -1,16 +1,25 @@
-export default function BookInfo(props) {
-  const book = props.book;
+import { Book } from "../types";
+type Props = {
+  book: Book;
+};
+
+export default function BookInfo({ book }: Props) {
   console.log(book);
 
-  return (
-    <div>
-      <h1 className="text-2xl">{book.title}</h1>
+  return book == undefined ? (
+    "Select a book"
+  ) : (
+    <div className="flex flex-col items-start">
+      <h1 className="text-2xl self-center">{book.title}</h1>
       <span>
         <p>Year: {book.year}</p>
         <p>Author: {book.author.name}</p>
         <p>Synopsis: {book.synopsis}</p>
         <p>Pages: {book.pages}</p>
-        Add more properties as needed
+        <p>Genre: {book.genre}</p>
+        <p>
+          Other books from {book.author.name}: {book.author.otherBooks}
+        </p>
       </span>
     </div>
   );
